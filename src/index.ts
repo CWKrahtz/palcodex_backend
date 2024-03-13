@@ -3,8 +3,7 @@ import dotenv from "dotenv";
 import { DataSource } from "typeorm";
 import { Materials } from "./entity/materials";
 import AppDataSource from "./appDatasource";
-
-
+import { Inventory } from "./entity/inventory";
 
 const cors = require("cors");
 
@@ -20,7 +19,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/materials', async (req, res) => { //add async
-    const materials = await AppDataSource //add await
+    const materials = await appDataSource //add await
     .manager.find(Materials)
 
     //find = get
@@ -38,11 +37,30 @@ app.get('/materials/:id', async (req, res) => {
     //getRepository = specify the entity we want to connect to
     //gets = finfBy/findOneBy
 
-    const materials = await AppDataSource.getRepository(Materials)
+    const materials = await appDataSource.getRepository(Materials)
     .findOneBy({id: id}) // findOneBy == single where and return 1
 
     console.log(materials)
     res.send(materials)
+})
+
+app.get('/inventory', async (req, res) => { //add async
+    const userInv = await appDataSource //add await
+    .manager.find(Inventory)
+
+    console.log(userInv)
+    res.send(userInv)
+})
+
+app.get('/inventory/:id', async (req, res) => {
+
+    var id = parseInt(req.params.id);
+
+    const userInv = await appDataSource.getRepository(Inventory)
+    .findOneBy({id: id}) // findOneBy == single where and return 1
+
+    console.log(userInv)
+    res.send(userInv)
 })
 
 app.listen(process.env.PORT, () => {

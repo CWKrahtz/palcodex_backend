@@ -14,6 +14,6 @@ materialRouter.get('/', async (req, res) => {
         res.json(materials)
     } catch (error) {
         console.error("Error finding maerials")
-        res.status(500).json({error: 'Internal Server Error'})
+        res.status(500).json({ error: 'Internal Server Error' })
     }
 })
