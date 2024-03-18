@@ -123,7 +123,7 @@ app.get('/veterancraft', async (req, res) => { //add async
     res.send(veteranCraft)
 })
 
-////CrAFT_INV////
+////CRAFT_INV////
 
 app.get('/craftinv', async (req, res) => { //add async
     const craftInv = await appDataSource //add await
