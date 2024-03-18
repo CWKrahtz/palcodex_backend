@@ -13,7 +13,7 @@ materialRouter.get('/', async (req, res) => {
         const materials = await appDataSource.getRepository(Materials).find()
         res.json(materials)
     } catch (error) {
-        console.error("Error finding maerials")
+        console.error("Error finding materials")
         res.status(500).json({ error: 'Internal Server Error' })
     }
 })
