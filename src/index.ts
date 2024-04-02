@@ -4,16 +4,18 @@ import { DataSource } from "typeorm";
 import { Materials } from "./entity/materials";
 import AppDataSource from "./appDatasource";
 import { Inventory } from "./entity/inventory";
-import { Profiles } from "./entity/profiles";
+import { User } from "./entity/user";
 import { NoviceCraft } from "./entity/novice_craft";
 import { AdvanceCraft } from "./entity/advance_craft";
 import { VeteranCraft } from "./entity/veteran_craft";
 import { CraftInv } from "./entity/craft_inv";
+import userRouter from "./route/user_routes";
 
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
+app.use('/users', userRouter)
 
 dotenv.config();
 
@@ -76,7 +78,7 @@ app.get('/inventory/:id', async (req, res) => {
 
 app.get('/profiles', async (req, res) => { //add async
     const profile = await appDataSource //add await
-    .manager.find(Profiles)
+    .manager.find(User)
 
     console.log(profile)
     res.send(profile)
@@ -86,7 +88,7 @@ app.get('/profiles/:id', async (req, res) => {
 
     var id = parseInt(req.params.id);
 
-    const profile = await appDataSource.getRepository(Profiles)
+    const profile = await appDataSource.getRepository(User)
     .findOneBy({id: id}) // findOneBy == single where and return 1
 
     console.log(profile)

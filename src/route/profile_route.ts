@@ -1,6 +1,6 @@
 import express from "express";
 import AppDataSource from "../appDatasource";
-import { Profiles } from "../entity/profiles";
+import { Profiles } from "../entity/user";
 
 const profileRoute = express.Router()
 
