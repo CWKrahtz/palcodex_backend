@@ -10,6 +10,7 @@ import { AdvanceCraft } from "./entity/advance_craft";
 import { VeteranCraft } from "./entity/veteran_craft";
 import { CraftInv } from "./entity/craft_inv";
 import userRouter from "./route/user_routes";
+import { Recipes } from "./entity/recipe";
 
 const cors = require("cors");
 
@@ -103,6 +104,14 @@ app.get('/novicecraft', async (req, res) => { //add async
 
     console.log(noviceCraft)
     res.send(noviceCraft)
+})
+
+app.get('/recipe', async (req, res) => { //add async
+    const recipe = await appDataSource //add await
+    .manager.find(Recipes)
+
+    console.log(recipe)
+    res.send(recipe)
 })
 
 ////ADVANCE_CRAFT////
