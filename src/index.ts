@@ -106,14 +106,6 @@ app.get('/novicecraft', async (req, res) => { //add async
     res.send(noviceCraft)
 })
 
-app.get('/recipe', async (req, res) => { //add async
-    const recipe = await appDataSource //add await
-    .manager.find(Recipes)
-
-    console.log(recipe)
-    res.send(recipe)
-})
-
 ////ADVANCE_CRAFT////
 
 app.get('/advancecraft', async (req, res) => { //add async
@@ -151,6 +143,27 @@ app.get('/craftinv/:id', async (req, res) => {
     .findOneBy({id: id}) // findOneBy == single where and return 1
     res.send(craftInv)
 
+})
+
+//Recipes
+app.get('/recipe', async (req, res) => { //add async
+    const recipe = await appDataSource //add await
+    .manager.find(Recipes)
+
+    console.log(recipe)
+    res.send(recipe)
+})
+//Get Distinct Recipe Names
+app.get('/recipe/distinct', async (req, res) => { //add async
+    const recipeNames = await appDataSource //add await
+    .getRepository(Recipes)
+    .createQueryBuilder('recipe')
+    .select('recipe.craft_name') // Corrected column name
+    .distinct(true)
+    .getRawMany()
+
+    console.log(recipeNames)
+    res.send(recipeNames)
 })
 
 
