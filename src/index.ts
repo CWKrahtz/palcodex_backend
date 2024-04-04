@@ -165,6 +165,15 @@ app.get('/recipe/distinct', async (req, res) => { //add async
     console.log(recipeNames)
     res.send(recipeNames)
 })
+//One Recipe
+app.get('/recipe/:name', async (req, res) => {
+
+    var name = req.params.name;
+    const recipeS = await appDataSource.getRepository(Recipes)
+    .findOneBy({craft_name: name}) // findOneBy == single where and return 1
+    res.send(recipeS)
+
+})
 
 
 app.get('/inventory/user/:id', async (req, res) => {
