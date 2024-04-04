@@ -154,6 +154,21 @@ app.get('/craftinv/:id', async (req, res) => {
 })
 
 
+app.get('/inventory/user/:id', async (req, res) => {
+    try {
+        var id = parseInt(req.params.id);
+        const inventory = await appDataSource.getRepository(Inventory).createQueryBuilder("inventory")
+        .where("inventory.profile_id = :id", { id: id})
+        .getMany()
+
+        res.json(inventory)
+    } catch (error) {
+        console.error("Error finding maerials")
+        res.status(500).json({ error: 'Internal Server Error' })
+    }
+})
+
+
 app.listen(process.env.PORT, () => {
     console.log('Server is listening on port 3000')
 })

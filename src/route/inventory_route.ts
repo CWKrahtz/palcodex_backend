@@ -8,9 +8,13 @@ inventoryRouter.use(express.json())
 
 const appDataSource = AppDataSource;
 
-inventoryRouter.get('/', async (req, res) => {
+inventoryRouter.get('/:id', async (req, res) => {
     try {
-        const inventory = await appDataSource.getRepository(Inventory).find()
+        var id = parseInt(req.params.id);
+        const inventory = await appDataSource.getRepository(Inventory).createQueryBuilder("inventory")
+        .where("inventory.profile_id = :id", { id: id})
+        .getRawMany()
+
         res.json(inventory)
     } catch (error) {
         console.error("Error finding maerials")
