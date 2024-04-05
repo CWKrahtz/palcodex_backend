@@ -170,7 +170,7 @@ app.get('/recipe/:name', async (req, res) => {
 
     var name = req.params.name;
     const recipeS = await appDataSource.getRepository(Recipes)
-    .findOneBy({craft_name: name}) // findOneBy == single where and return 1
+    .findBy({craft_name: name}) // Use findBy with craft_name
     res.send(recipeS)
 
 })
