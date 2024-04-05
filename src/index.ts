@@ -178,7 +178,41 @@ app.get('/recipe/:name', async (req, res) => {
 
 })
 
+//Update Craft Table and Inventory Table
+// app.put("/recipe/:name/craft", async (req, res) => {
 
+//     try {
+//         let name = req.params.name
+//         let{recipe, inventory} = req.body;
+
+//         //Do not think this is needed. Lecture video use this to increase the amount crafted
+//         var recipeReq = await appDataSource.getRepository(Recipes).findOneBy({craft_name: name})
+
+//         //Loop through the inventyory and deduct the inventory amount
+//         updateInvAmount(inventory)
+        
+        
+//     } catch (error) {
+//         console.error("Something went wrong: " + error)
+//         res.status(500).json({ error: 'Internal Server Error' })
+//     }
+// })
+
+// const updateInvAmount = async (inventory: Inventory[]) => {
+    
+//     try {
+//         for (var inv of inventory){
+//             console.log(inv)
+//             var inventoryItem = await appDataSource.getRepository(Inventory).findOneBy({material_name: inv.material_name})
+
+//             inventoryItem!.material_amount = inv.material_amount - 
+//         }
+//     } catch (error) {
+//         console.error("Something went wrong: " + error)
+//     }
+// }
+
+//Get user inventory
 app.get('/inventory/user/:id', async (req, res) => {
     try {
         var id = parseInt(req.params.id);
@@ -188,7 +222,7 @@ app.get('/inventory/user/:id', async (req, res) => {
 
         res.json(inventory)
     } catch (error) {
-        console.error("Error finding maerials")
+        console.error("Error finding materials")
         res.status(500).json({ error: 'Internal Server Error' })
     }
 })
