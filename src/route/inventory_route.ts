@@ -8,7 +8,7 @@ inventoryRouter.use(express.json())
 
 const appDataSource = AppDataSource;
 
-inventoryRouter.get('/:id', async (req, res) => {
+inventoryRouter.get('/user/:id', async (req, res) => {    
     try {
         var id = parseInt(req.params.id);
         const inventory = await appDataSource.getRepository(Inventory).createQueryBuilder("inventory")
@@ -21,3 +21,5 @@ inventoryRouter.get('/:id', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' })
     }
 })
+
+export default inventoryRouter

@@ -11,12 +11,15 @@ import { VeteranCraft } from "./entity/veteran_craft";
 import { CraftInv } from "./entity/craft_inv";
 import userRouter from "./route/user_routes";
 import { Recipes } from "./entity/recipe";
+import inventoryRouter from "./route/inventory_route";
+import materialRouter from "./route/materials_route";
 
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
 app.use('/users', userRouter)
+app.use('/material', materialRouter)
 
 dotenv.config();
 
