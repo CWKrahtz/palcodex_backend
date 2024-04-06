@@ -24,8 +24,8 @@ recipesRoute.put("/:id", async (req, res) => {
     try {
         const id = parseInt(req.params.id) // id of item want to update
         const { item, material_id, amount } = req.body // all the values we want to update
-        const craftItem = await appDataSource.getRepository(Recipes).findOneBy({ profile_id: id, material_name: item})
-        const recipeItem = await appDataSource.getRepository(CraftInv).findOneBy({ id: material_id})
+        const craftItem = await appDataSource.getRepository(Recipes).findOneBy({ id: id, material_req: item})
+        const recipeItem = await appDataSource.getRepository(CraftInv).findOneBy({ profile_id: id, craft_name: item})
 
         if (!recipeItem) { // if item doesn't exist respond swith 404
             res.status(404).json({ message: "No Item found" })
