@@ -48,7 +48,6 @@ materialRouter.put("/:id", async (req, res) => {
         console.error("Error Update inventory item", error)
         res.status(500).json({ error: "Internal Server Error" })
     }
-
 })
 
 export default materialRouter
