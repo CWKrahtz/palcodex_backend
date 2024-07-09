@@ -76,54 +76,54 @@ List your collaborators
 
 ## Features
 
-###1 Inventory Management:
+### 1 Inventory Management:
 
 Display user's inventory with materials and their details (name, icon, amount).
 Allow users to search for specific materials within their inventory.
 Enable users to select items from their inventory.
 Provide options to add or remove items from a cart.
 
-###2 Crafting Inventory:
+### 2 Crafting Inventory:
 
 Display crafted items with details (name, amount).
 Allow users to view crafted items in their inventory.
 
-###3 Recipe Display:
+### 3 Recipe Display:
 
 Present recipes along with their required ingredients.
 Enable users to view recipe details, including ingredients and crafting instructions.
 
-###4 User Authentication:
+### 4 User Authentication:
 
 Provide a login form for users to input their credentials (email, password).
 Allow users to log in and authenticate their identity.
 Implement user authentication status to control access to certain features or data.
 
-###5 Navigation:
+### 5 Navigation:
 
 Include a navigation bar with links to various sections of the website (Home, Materials, Inventory, Recipes, Crafted).
 Provide a user dropdown menu with links for Admin and Login.
 
-###6 User Interaction:
+### 6 User Interaction:
 
 Allow users to interact with items in the inventory and crafting inventory, such as selecting, adding to cart, or viewing details.
 Enable users to search for specific materials or recipes within their inventory.
 
-###7 HTTP Requests Handling:
+### 7 HTTP Requests Handling:
 
 Implement services to handle HTTP requests for fetching and updating inventory data (MaterialsService, CraftinvService).
 Manage HTTP requests for user authentication (AuthService).
 
-###8 Styling and Layout:
+### 8 Styling and Layout:
 
 Apply CSS styles to enhance the visual appeal and layout of the webpage.
 Customize scrollbar appearance and layout adjustments for better user experience.
-###9 Testing:
+### 9 Testing:
 
 Develop test suites to ensure the functionality and reliability of Angular components, such as HomeComponent.
 Conduct unit tests for individual components and services to verify their behavior.
 
-###10 Footer and Additional Information:
+### 10 Footer and Additional Information:
 
 Include a footer section with company information, quick links, and social media links.
 Provide additional information sections to inform users about the website's offerings, tools, and services.
