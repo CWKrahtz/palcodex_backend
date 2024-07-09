@@ -41,7 +41,7 @@ List your collaborators
 
 <div style="text-align: center;">
     <a href="https://github.com/DanteCS25">
-      <img src="src\assets\Dante.jpg" alt="CS Strijdom" width="100px">
+      <img src="Dante.jpg" alt="CS Strijdom" width="100px">
     </a>
     <br>
     <sub>CS Strijdom</sub>
@@ -49,7 +49,7 @@ List your collaborators
 
   <div style="text-align: center;">
     <a href="https://github.com/CWKrahtz">
-      <img src="src\assets\yess.gif" alt="Christian Krahtz" width="100px">
+      <img src="yess.gif" alt="Christian Krahtz" width="100px">
     </a>
     <br>
     <sub>Christian Krahtz</sub>
