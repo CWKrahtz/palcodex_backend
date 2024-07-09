@@ -12,6 +12,13 @@ By integrating the concept of material transportation into our inventory managem
 
 This approach not only enhances the functionality of our application but also adds a layer of realism and engagement for the users. By simulating the process of material transportation and crafting, we create a more immersive environment where users can actively participate in the management and utilization of resources. Ultimately, our goal is to provide a seamless and enjoyable experience that combines the practicality of inventory management with the excitement of resource interaction and crafting.
 
+## Table of Contents
+
+- [Installation](#installation)
+- [UI Design](#ui-design)
+- [Credits](#credits)
+- [Final Outcome](#final-outcome)
+
 ## Installation
 
 ### Installation
