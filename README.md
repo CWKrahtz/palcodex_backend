@@ -16,6 +16,7 @@ This approach not only enhances the functionality of our application but also ad
 
 - [Installation](#installation)
 - [UI Design](#ui-design)
+- [Features](#features)
 - [Credits](#credits)
 - [Final Outcome](#final-outcome)
 
