@@ -13,6 +13,7 @@ import userRouter from "./route/user_routes";
 import { Recipes } from "./entity/recipe";
 import inventoryRouter from "./route/inventory_route";
 import materialRouter from "./route/materials_route";
+import craftInvRoute from "./route/craftInv_routes";
 
 const cors = require("cors");
 
@@ -20,6 +21,7 @@ const app = express();
 app.use(cors());
 app.use('/users', userRouter)
 app.use('/material', materialRouter)
+app.use('/craft', craftInvRoute)
 
 dotenv.config();
 

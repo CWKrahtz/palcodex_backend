@@ -6,7 +6,7 @@ const AppDataSource = new DataSource({
     "host": "localhost",
     "port": 5432,
     "username": "postgres",
-    "password": "admin",
+    "password": "1234",
     "database": "palcodex_db",
     "entities": ["src/entity/*"],
     "logging": true,
